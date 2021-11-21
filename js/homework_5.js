@@ -105,17 +105,22 @@ console.log(get_short_fio(full));
 /*Напишите функцию get_order(string), которая отсортирует все слова в заданном 
 предложении string в алфавитном порядке. Например: get_order("ноты акустика гитара"), 
 функция должна вернуть "акустика гитара ноты"*/
-/*
+
 function get_order(string) {
-   let str_array = string.split ();
-   let sort_array = [];
-   for (i = 0; i < str_array; i++) {
-      switch (str_array[i].charAt(0)) {
-         case 
-      }
+   if (typeof string !== 'string') {
+      return null;
    }
+
+   let result;
+   let string_array = string.split(' ');
+   string_array.sort(); 
+   result = string_array.join(' ');;
+   return result;
 }
-*/
+let sentence = 'ноты аккустика гитара';
+let result = get_order(sentence);
+console.log(result);
+
 //Напишите функцию get_random( arr ), которая вернет случайный элемент входящего массива arr.
 
 let array = [11, 12, 3, 4, 900, 20, 10, 25, 60, 112];
@@ -152,21 +157,3 @@ function Task1() {
    return user;
 }
 console.log(Task1());
-
-/*Создайте функцию is_empty(obj), которая возвращает true, если в объекте 
-нет свойств и false – если хоть одно свойство есть.
-Например:
-var schedule = {};
-isEmpty(schedule) ; // должно вернуть true
-schedule["8:30"] = "подъём";
-isEmpty(schedule) ; //должно вернуть false*/
-
-/*Есть объект points с оценками. Напишите код, который выведет сумму всех оценок. 
-var points = {
-"Вася": 200,
-"Петя": 300,
-"Даша": 250,
-"Андрей": 150,
-"Сергей": 450,
-};
-Найти имена тех, кто получает минимальную и максимальную оценку.*/
